@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import os
+from selenium.webdriver.chrome.options import Options
+
 
 def before_all(context):
     """Setup before running all tests."""
