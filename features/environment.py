@@ -5,27 +5,20 @@ import os
 
 def before_all(context):
     """Setup before running all tests."""
-    # Set up Chrome options
-    chrome_options = webdriver.ChromeOptions()
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")  # Run Chrome in headless mode
+    chrome_options.add_argument("--no-sandbox")  # Bypass OS security model
+    chrome_options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource problems
+    chrome_options.add_argument("--disable-gpu")  # Disable GPU acceleration
+    chrome_options.add_argument("--window-size=1920x1080")  # Set window size to desired dimensions
 
-    # Check if running in CI environment
-    if os.getenv('CI'):
-        # Add headless argument for CI environment
-        chrome_options.add_argument('--headless')
-        # Add no-sandbox argument for CI environment
-        chrome_options.add_argument('--no-sandbox')
-        # Add disable-dev-shm-usage argument for CI environment
-        chrome_options.add_argument('--disable-dev-shm-usage')
-    else:
-        # Maximize window for local environment
-        chrome_options.add_argument('--start-maximized')
-
-    # Initialize the Chrome driver with options
-    context.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+    context.driver = webdriver.Chrome(
+        service=Service(ChromeDriverManager().install()),
+        options=chrome_options
+    )
     context.driver.implicitly_wait(10)  # Wait up to 10 seconds for elements to appear
     context.base_url = "https://devagentadmin.glcredentials.com/"  # Replace with your app's URL
     print("Before All: Browser session started.")
-
 def before_feature(context, feature):
     """Setup before each feature file."""
     print(f"Starting feature: {feature.name}")
