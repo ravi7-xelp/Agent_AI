@@ -4,9 +4,23 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 def before_all(context):
     """Setup before running all tests."""
-    # Start a single browser session for all tests
-    context.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-    context.driver.maximize_window()
+    # Set up Chrome options
+    chrome_options = webdriver.ChromeOptions()
+
+    # Check if running in CI environment
+    if os.getenv('CI'):
+        # Add headless argument for CI environment
+        chrome_options.add_argument('--headless')
+        # Add no-sandbox argument for CI environment
+        chrome_options.add_argument('--no-sandbox')
+        # Add disable-dev-shm-usage argument for CI environment
+        chrome_options.add_argument('--disable-dev-shm-usage')
+    else:
+        # Maximize window for local environment
+        chrome_options.add_argument('--start-maximized')
+
+    # Initialize the Chrome driver with options
+    context.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
     context.driver.implicitly_wait(10)  # Wait up to 10 seconds for elements to appear
     context.base_url = "https://devagentadmin.glcredentials.com/"  # Replace with your app's URL
     print("Before All: Browser session started.")
