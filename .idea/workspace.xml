@@ -17,6 +17,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -25,16 +28,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.configuration_page.executor&quot;: &quot;Run&quot;,
-    &quot;Python.configuration_steps.executor&quot;: &quot;Run&quot;,
-    &quot;Python.environment.executor&quot;: &quot;Run&quot;,
-    &quot;Python.institute_steps.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/xelpmoc/AI_Agent_testing/AI_Agent&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.configuration_page.executor": "Run",
+    "Python.configuration_steps.executor": "Run",
+    "Python.environment.executor": "Run",
+    "Python.institute_steps.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/xelpmoc/AI_Agent_testing/AI_Agent"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Python.institute_steps">
     <configuration name="configuration_page" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AI_Agent" />
