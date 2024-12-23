@@ -38,5 +38,5 @@ Ensure the following are installed on your system:
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/yourusername/agent-ai-testing-framework.git
-   cd agent-ai-testing-framework
+   git clone https://github.com/ravi7-xelp/Agent_AI.git
+   cd Agent_AI
